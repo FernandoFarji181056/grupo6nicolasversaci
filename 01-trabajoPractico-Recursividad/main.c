@@ -99,7 +99,7 @@ void main(){
             printf("Elegiste la opcion 8\n");
             printf("Presiona ENTER para ir al ejercicio elegido\n");
             system("pause");
-            //ejecutar_TP1_EJ08();
+            ejecutar_TP1_EJ08();
             system("pause");
             break;
 
