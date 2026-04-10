@@ -17,5 +17,7 @@ Burgos Fernando Legajo 89157 fernandohburgos5@gmail.com
 Versaci Nicolas Legajo 198892 nicolascoco17@gmail.com
 Rossetti Estefania Legajo 19609701 esteft660@gmail.com
 Farji Fernando Legajo 181056 fernandounlu@hotmail.com
-Ciano Valentin Legajo 175632 
+Ciano Valentin Legajo 175632
+Castro Tomas
+Piro Enzo
 
