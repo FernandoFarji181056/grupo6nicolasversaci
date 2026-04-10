@@ -3,7 +3,7 @@
 #include <string.h>
 #include "tp_1_recursividad.h"
 
-void backtrack(int conjunto[], int tamaño, int n, int index,
+void backtrack(int conjunto[], int tamano, int n, int index,
                int sumaActual, int subset[], int subsetSize,
                char *resultado) {
 
