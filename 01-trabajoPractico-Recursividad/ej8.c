@@ -55,3 +55,18 @@ void subconjuntosQueSumanN(int conjunto[], int tamano, int n, char **output) {
 
     free(subset);
 }
+
+void ejecutar_TP1_EJ08() {
+
+    int A[] = {10, 3, 1, 7, 4, 2};
+    int tam = 6;
+    int n = 7;
+
+    char *resultado;
+
+    subconjuntosQueSumanN(A, tam, n, &resultado);
+
+    printf("Subconjuntos que suman %d: %s\n", n, resultado);
+
+    free(resultado);
+}
