@@ -8,7 +8,6 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
-
 				"resolucionEj09.c",
 				"resolucionEj10.c",
 				"ej1.c",
@@ -25,16 +24,14 @@
                 "ej8.c",
 				"ej09.c",
 				"ej10.c",
-				"C:\\Estructura2026\\Repositorios\\prueba2026\\libs\\validaciones\\implementaciones\\Validacion_datos.c",
-				"C:\\Estructura2026\\Repositorios\\prueba2026\\libs\\validaciones\\implementaciones\\Validaciones.c",
-
-
-
+				"..\\libs\\validaciones\\implementaciones\\Validacion_datos.c",
+				"..\\libs\\validaciones\\implementaciones\\Validaciones.c",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}"
+                //"cwd": "${workspaceFolder}"
             },
             "problemMatcher": [
                 "$gcc"
