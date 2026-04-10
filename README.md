@@ -13,3 +13,9 @@ Curso de Estructuras de Datos y Algoritmos I, Universidad Nacional de Lujan
 
 Apellido y Nombre // Legajo // Mails
 
+Burgos Fernando Legajo 89157 fernandohburgos5@gmail.com
+Versaci Nicolas Legajo 198892 nicolascoco17@gmail.com
+Rossetti Estefania Legajo 19609701 esteft660@gmail.com
+Farji Fernando Legajo 181056 fernandounlu@hotmail.com
+Ciano Valentin Legajo 175632 
+
