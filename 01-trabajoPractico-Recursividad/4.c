@@ -7,6 +7,16 @@ en cuenta que en el caso de que la división no sea exacta, se devolverán hasta
 cifras decimales (si es necesario), donde “n” es un valor entre 1 a 10 a ingresar como 
 precisión de la división.*/
 
+// 🔹 0. Valida si es un valor entero correcto
+int leerEntero() {
+    int x;
+    while (scanf("%d", &x) != 1) {
+        printf("Error. Ingrese un numero valido: ");
+        while (getchar() != '\n'); // limpiar buffer
+    }
+    return x;
+}
+
 // 🔹 1. División entera (restas sucesivas)
 int division_entera(int m, int n, int *resto) {
     // Caso base
@@ -40,9 +50,27 @@ void division_decimal(int resto, int n, int contador, int cant_decimales) {
 }
 
 void ejecutar_TP1_EJ04(){
-    int m = 22, n = 3;
-    int cant_decimales = 5;
+    int m, n, cant_decimales;
     int resto;
+
+    printf("Ingrese m: ");
+    m = leerEntero();
+
+    printf("Ingrese n: ");
+    n = leerEntero();
+
+    while (n == 0) {
+        printf("Error. El divisor no puede ser 0. Ingrese n nuevamente: ");
+        n = leerEntero();
+    }
+
+    printf("Ingrese cantidad de decimales (1 a 10): ");
+    cant_decimales = leerEntero();
+
+    while (cant_decimales < 1 || cant_decimales > 10) {
+        printf("Ingrese un valor entre 1 y 10: ");
+        cant_decimales = leerEntero();
+    }
 
     int cociente = division_entera(m, n, &resto);
 
@@ -52,6 +80,6 @@ void ejecutar_TP1_EJ04(){
         printf(".");
         division_decimal(resto, n, 0, cant_decimales);
     }
+
     system("pause");
-    //return 0;
 }
