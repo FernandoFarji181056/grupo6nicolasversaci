@@ -1,5 +1,6 @@
 #include <stdbool.h>
-#include "listas.h"
+#include "../libs/listas/headers/listas.h"
+//#include "../libs/validaciones/headers/Validacion_datos.h"
 //#include "tipo_elemento.h"
 
 #ifndef TP_2_Listas

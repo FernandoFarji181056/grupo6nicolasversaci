@@ -8,7 +8,6 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
-                /*
 				"resolucionEj09.c",
 				"resolucionEj10.c",
 				"ej1.c",
@@ -27,10 +26,6 @@
 				"ej10.c",
 				"..\\libs\\validaciones\\implementaciones\\Validacion_datos.c",
 				"..\\libs\\validaciones\\implementaciones\\Validaciones.c",
-                */
-                "tp_2_listas.c",
-                "ejerciciosTP2.c",
-                "..\\libs\\validaciones\\implementaciones\\Validacion_datos.c",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
