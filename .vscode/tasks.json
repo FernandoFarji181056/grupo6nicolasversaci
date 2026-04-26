@@ -30,7 +30,9 @@
                 */
                 "tp_2_listas.c",
                 "ejerciciosTP2.c",
-                "..\\libs\\validaciones\\implementaciones\\Validacion_datos.c",
+                "..\\libs\\listas\\implementaciones\\listas_arreglos.c",
+                "..\\libs\\tipoElemento\\implementaciones\\tipo_elemento.c",
+                "..\\libs\\validaciones\\implementaciones\\Validacion_datos.c",                
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
