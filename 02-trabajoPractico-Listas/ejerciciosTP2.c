@@ -32,7 +32,7 @@ void ejecutar_TP2_EJ06() {
 
     printf("Entraste a la funcion EJ06\n");
 
-    TipoElemento X;
+    //TipoElemento X;
     Lista L1 = l_crear();
     Lista L2 = l_crear();
     bool sublista, resulCarga;
@@ -58,7 +58,7 @@ void ejecutar_TP2_EJ06() {
         printf("ya que recorre Lista 2 con un while y en cada iteracion realiza un while de Lista 1\n");
         
 
-        system("pause");
+        //system("pause");
     }   
 
 
@@ -85,7 +85,7 @@ bool cargarListasManual(Lista L, Lista L2){
     char string2[1000];
     //int longitud01;
 
-    int i=0;
+    //int i=0;
     TipoElemento X;
 
     int min = 1;
@@ -154,7 +154,7 @@ bool cargarListasManual(Lista L, Lista L2){
             entero2=(int) strtol(string2,NULL,10); //pasa string a entero
             if (entero2 < min || entero2 > max){
                 printf("El numero ingresado NO cumple con los requisitos, intentelo nuevamente\n");
-                salida01=false;
+                salida02=false;
             } else{
                 X = te_crear(entero2);
                 l_agregar(L2, X);
