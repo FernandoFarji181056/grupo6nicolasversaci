@@ -169,7 +169,32 @@ void ejecutar_TP2_EJ03() {
 }
 
 void ejecutar_TP2_EJ04() {
-    printf("Entraste a la funcion EJ04\n");
+
+    printf("EJERCICIO 4 - COMPARAR LISTAS\n\n");
+
+    Lista L1 = l_crear();
+    Lista L2 = l_crear();
+
+    if (!cargarListasManual(L1, L2)) {
+        return;
+    }
+
+    int resultado = CompararListas(L1, L2);
+
+    printf("\nRESULTADO:\n");
+
+    if (resultado == 1) {
+        printf("L1 > L2\n");
+    } else if (resultado == 2) {
+        printf("L1 < L2\n");
+    } else {
+        printf("L1 = L2\n");
+    }
+
+    printf("\nComplejidad algoritmica: O(n)\n");
+    printf("Se recorre la lista una sola vez comparando elemento a elemento.\n");
+
+    system("pause");
 }
 
 void ejecutar_TP2_EJ05() {
