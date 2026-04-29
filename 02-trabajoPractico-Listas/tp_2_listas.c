@@ -82,7 +82,39 @@ ResultadosMul multiplo(Lista l1, Lista l2) {
 
 
 // EJERCICIO 4
+int CompararListas(Lista l1, Lista l2) {
 
+    int mayoresL1 = 0;
+    int mayoresL2 = 0;
+
+    int long1 = l_longitud(l1);
+    int long2 = l_longitud(l2);
+
+    // Tomamos la menor longitud para evitar errores
+    int min = (long1 < long2) ? long1 : long2;
+
+    TipoElemento e1, e2;
+
+    for (int i = 1; i <= min; i++) {
+
+        e1 = l_recuperar(l1, i);
+        e2 = l_recuperar(l2, i);
+
+        if (e1->clave > e2->clave) {
+            mayoresL1++;
+        } else if (e1->clave < e2->clave) {
+            mayoresL2++;
+        }
+    }
+
+    if (mayoresL1 > mayoresL2) {
+        return 1; // L1 > L2
+    } else if (mayoresL2 > mayoresL1) {
+        return 2; // L1 < L2
+    } else {
+        return 0; // iguales
+    }
+}
 // EJERCICIO 5
 
 float evaluarPoliomio(Lista list, float x) {
