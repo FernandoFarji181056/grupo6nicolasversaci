@@ -332,7 +332,7 @@ void ejecutar_TP2_EJ06() {
 
     
 
-    printf("Entraste a la funcion EJ06\n");
+    printf("Ejercicio 6-Sublistas\\n");
 
     //TipoElemento X;
     Lista L1 = l_crear();
