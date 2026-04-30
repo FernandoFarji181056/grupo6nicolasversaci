@@ -22,7 +22,7 @@ void main(){
     do{
         clearScreen();
         printf("\n");
-        printf("--------TP01 Recursividad--------\n");
+        printf("--------TP02 LISTAS--------\n");
         printf("\n");
         //printf("Ejercicio 1: \n");
         printf("Ejercicio 2: \n");
@@ -30,10 +30,6 @@ void main(){
         printf("Ejercicio 4: \n");
         printf("Ejercicio 5: \n");
         printf("Ejercicio 6: \n");
-        //printf("Ejercicio 7: \n");
-        //printf("Ejercicio 8: \n");
-        //printf("Ejercicio 9: \n");
-        //printf("Ejercicio 10: \n");
         printf("Ingrese el ejercicio deseado o X para salir\n");
         printf("\n");
 
@@ -132,7 +128,7 @@ void main(){
 
     } while (!x);
 
-    printf("Saliendo de TP1\n");
+    printf("Saliendo de TP2\n");
     system("pause");
 }
 
