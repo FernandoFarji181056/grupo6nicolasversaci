@@ -30,7 +30,10 @@
                 */
                 "tp_2_listas.c",
                 "ejerciciosTP2.c",
-                "..\\libs\\listas\\implementaciones\\listas_arreglos.c",
+                //"..\\libs\\listas\\implementaciones\\listas_arreglos.c",
+                //"..\\libs\\listas\\implementaciones\\listas_cursores.c",
+                "..\\libs\\listas\\implementaciones\\listas_punteros.c",
+
                 "..\\libs\\tipoElemento\\implementaciones\\tipo_elemento.c",
                 "..\\libs\\validaciones\\implementaciones\\Validacion_datos.c",                
                 "-o",
