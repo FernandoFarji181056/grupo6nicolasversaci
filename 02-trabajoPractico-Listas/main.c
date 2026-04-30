@@ -14,7 +14,7 @@ void limpiarBuffer() {
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
-void main(){
+int main() {
 
     int opcion = 0;
     bool x = false;
@@ -40,15 +40,7 @@ void main(){
         }
 
         switch (opcion){
-            /*
-        case 1:
-            printf("Elegiste la opcion 1\n");
-            printf("Presiona ENTER para ir al ejercicio elegido\n");
-            system("pause");
-            ejecutar_TP2_EJ01();
-            system("pause");
-            break;
-            */
+            
         case 2:
             printf("Elegiste la opcion 2\n");
             printf("Presiona ENTER para ir al ejercicio elegido\n");
@@ -84,43 +76,6 @@ void main(){
             ejecutar_TP2_EJ06();
             system("pause");
             break;
-/*
-        case 7:
-            printf("Elegiste la opcion 7\n");
-            printf("Presiona ENTER para ir al ejercicio elegido\n");
-            system("pause");
-            ejecutar_TP2_EJ07();
-            system("pause");
-            break;
-
-        case 8:
-            printf("Elegiste la opcion 8\n");
-            printf("Presiona ENTER para ir al ejercicio elegido\n");
-            system("pause");
-            ejecutar_TP2_EJ08();
-            system("pause");
-            break;
-
-        case 9:
-            printf("Elegiste la opcion 9\n");
-            printf("Presiona ENTER para ir al ejercicio elegido\n");
-            system("pause");
-            ejecutar_TP2_EJ09();
-            system("pause");
-            break;
-
-        case 10:
-            printf("Elegiste la opcion 10\n");
-            printf("Presiona ENTER para ir al ejercicio elegido\n");
-            system("pause");
-            ejecutar_TP2_EJ10();
-            system("pause");
-            break;
-
-
-*/
-
-
 
         default:
             break;
@@ -130,5 +85,7 @@ void main(){
 
     printf("Saliendo de TP2\n");
     system("pause");
+    
+    return 0; 
 }
 
