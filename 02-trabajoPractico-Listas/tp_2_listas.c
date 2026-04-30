@@ -13,6 +13,102 @@
 
 
 // EJERCICIO 2
+/*  Esta función recibe 2 listas,
+    retorna una nueva lista con los elementos que se encuentran
+    en la primera pero no en la segunda
+*/
+Lista verElementosQueNoSeRepiten(Lista L1, Lista L2) {
+    Lista resultado = l_crear();
+    Iterador it = iterador(L1);
+    TipoElemento x;
+
+    while (hay_siguiente(it)) {
+        x = siguiente(it);
+
+        if (l_buscar(L2, x->clave) == NULL) {
+            if (l_buscar(resultado, x->clave) == NULL) { // evita duplicados
+                l_agregar(resultado, te_crear(x->clave));
+            }
+        }
+    }
+
+    return resultado;
+}
+
+/*  Esta funciòn recibe 2 listas
+    retorna una nueva lista con los elementos
+    que se encuentran en ambas listas
+*/
+Lista verElementosRepetidos(Lista L1, Lista L2) {
+    Lista resultado = l_crear();
+    Iterador it = iterador(L1);
+    TipoElemento x;
+
+    while (hay_siguiente(it)) {
+        x = siguiente(it);
+
+        if (l_buscar(L2, x->clave) != NULL) {
+            if (l_buscar(resultado, x->clave) == NULL) { // evita duplicados
+                l_agregar(resultado, te_crear(x->clave));
+            }
+        }
+    }
+
+    return resultado;
+}
+
+/*  Esta funciòn recibe una lista
+    retorna un float con el promedio de esa lista
+*/
+float promedio(Lista L) {
+    if (l_es_vacia(L)) return 0;
+
+    int suma = 0;
+
+    for (int i = 1; i <= l_longitud(L); i++) {
+        suma += l_recuperar(L, i)->clave;
+    }
+
+    return (float)suma / l_longitud(L);
+}
+
+/*  Esta funciòn recibe 2 listas
+    retorna un struct de tipo ResultadoValorMinimo
+    conteniendo el valor mínimo y su posición de cada lista
+*/
+ResultadoValorMinimo valorMinimo(Lista L1, Lista L2) {
+    ResultadoValorMinimo r = {0, 0, 0, 0};
+
+    if (!l_es_vacia(L1)) {
+        r.valor = l_recuperar(L1, 1)->clave;
+        r.pos = 1;
+
+        for (int i = 2; i <= l_longitud(L1); i++) {
+            TipoElemento x = l_recuperar(L1, i);
+
+            if (x->clave < r.valor) {
+                r.valor = x->clave;
+                r.pos = i;
+            }
+        }
+    }
+
+    if (!l_es_vacia(L2)) {
+        r.valor_2 = l_recuperar(L2, 1)->clave;
+        r.pos_2 = 1;
+
+        for (int i = 2; i <= l_longitud(L2); i++) {
+            TipoElemento x = l_recuperar(L2, i);
+
+            if (x->clave < r.valor_2) {
+                r.valor_2 = x->clave;
+                r.pos_2 = i;
+            }
+        }
+    }
+
+    return r;
+}
 
 // EJERCICIO 3
 
