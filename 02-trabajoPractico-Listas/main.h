@@ -1,6 +1,6 @@
 
-#ifndef MAIN_TP1_H
-#define MAIN_TP1_H
+#ifndef MAIN_TP2_H
+#define MAIN_TP2_H
 
 
 void ejecutar_TP2_EJ02();
