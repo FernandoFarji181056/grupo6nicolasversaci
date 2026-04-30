@@ -47,7 +47,7 @@ void ejecutar_TP2_EJ02() {
     printf("\nValor minimo en L1: %d (posicion %d)\n", min.valor, min.pos);
     printf("Valor minimo en L2: %d (posicion %d)\n", min.valor_2, min.pos_2);
 
-    // Complejidad (IMPORTANTE para la catedra)
+    // Complejidad 
     printf("\nComplejidad:\n");
     printf("- verElementosQueNoSeRepiten: O(n^2)\n");
     printf("- verElementosRepetidos: O(n^2)\n");
