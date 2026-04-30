@@ -13,9 +13,49 @@ bool cargarListasManual(Lista L, Lista L2);
 bool esSublista(Lista L1, Lista L2);
 
 void ejecutar_TP2_EJ02() {
-    printf("Entraste a la funcion EJ02\n");
-}
 
+    printf("EJERCICIO 2\n\n");
+
+    Lista L1 = l_crear();
+    Lista L2 = l_crear();
+
+    if (!cargarListasManual(L1, L2)) {
+        return;
+    }
+
+    printf("\n--- RESULTADOS ---\n\n");
+
+    // A) Elementos que no se repiten
+    Lista noRepetidos = verElementosQueNoSeRepiten(L1, L2);
+    printf("Elementos en L1 que NO estan en L2:\n");
+    l_mostrar(noRepetidos);
+    printf("\n");
+
+    // B) Elementos repetidos
+    Lista repetidos = verElementosRepetidos(L1, L2);
+    printf("Elementos que estan en ambas listas:\n");
+    l_mostrar(repetidos);
+    printf("\n");
+
+    // C) Promedio
+    float prom = promedio(L1);
+    printf("Promedio de L1: %.2f\n", prom);
+
+    // D) Valor minimo
+    ResultadoValorMinimo min = valorMinimo(L1, L2);
+
+    printf("\nValor minimo en L1: %d (posicion %d)\n", min.valor, min.pos);
+    printf("Valor minimo en L2: %d (posicion %d)\n", min.valor_2, min.pos_2);
+
+    // Complejidad (IMPORTANTE para la catedra)
+    printf("\nComplejidad:\n");
+    printf("- verElementosQueNoSeRepiten: O(n^2)\n");
+    printf("- verElementosRepetidos: O(n^2)\n");
+    printf("- promedio: O(n)\n");
+    printf("- valorMinimo: O(n)\n");
+
+    system("pause");
+}
 void ejecutar_TP2_EJ03() {
     printf("Entraste a la funcion EJ03\n");
 
