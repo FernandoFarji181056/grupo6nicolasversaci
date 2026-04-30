@@ -482,7 +482,7 @@ bool cargarListasManual(Lista L, Lista L2){
     printf("\n");
 
     if ( l_es_vacia (L) || l_es_vacia(L2)){
-        printf("NO PUEDE HABER LISTAS VACIAS Y LAS LISTAS TIENEN QUE TENER EL MISMO TAMANIO\n");
+        printf("NO PUEDE HABER LISTAS VACIAS");
         printf("INTENELO NUEVAMENTE CUANDO QUIERA, GRACIAS\n");
         return false;
     }
