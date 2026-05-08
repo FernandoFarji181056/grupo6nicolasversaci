@@ -28,11 +28,17 @@
 				"..\\libs\\validaciones\\implementaciones\\Validacion_datos.c",
 				"..\\libs\\validaciones\\implementaciones\\Validaciones.c",
                 */
-                "tp_2_listas.c",
-                "ejerciciosTP2.c",
+                //"tp_2_listas.c",
+                //"ejerciciosTP2.c",
                 //"..\\libs\\listas\\implementaciones\\listas_arreglos.c",
                 //"..\\libs\\listas\\implementaciones\\listas_cursores.c",
-                "..\\libs\\listas\\implementaciones\\listas_punteros.c",
+                //"..\\libs\\listas\\implementaciones\\listas_punteros.c",
+
+                //"..\\libs\\pilas\\implementaciones\\pilas_punteros.c",
+                "..\\libs\\pilas\\implementaciones\\pilas_arreglos.c",
+                "tp_3_pilas.c",
+                "ejerciciosTP3.c",
+
 
                 "..\\libs\\tipoElemento\\implementaciones\\tipo_elemento.c",
                 "..\\libs\\validaciones\\implementaciones\\Validacion_datos.c",                
