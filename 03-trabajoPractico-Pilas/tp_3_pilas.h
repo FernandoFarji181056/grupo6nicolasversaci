@@ -14,7 +14,8 @@ bool p_ej2_existeclave(Pila p, int clave);
 
 //  b.	Colocar en una posición ordinal determinada, recibida por parámetro, un nuevo elemento (Insertar un elemento nuevo).
 // Retorna la nueva pila con el nuevo elemento, caso contrario la pila original recibida.
-Pila p_ej2_colocarelemento(Pila p, int posicionordinal);
+//Pila p_ej2_colocarelemento(Pila p, int posicionordinal);
+Pila p_ej2_colocarelemento(Pila p, int posicionordinal, TipoElemento x);
 
 //  c.	Eliminar de una pila un elemento dado (primera ocurrencia encontrada por la clave).
 // retorna la nueva pila sin la clave, si la encuentra, sino retorna la misma pila que recibio.
