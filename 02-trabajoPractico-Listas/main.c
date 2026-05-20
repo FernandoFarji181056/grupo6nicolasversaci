@@ -34,7 +34,7 @@ int main() {
         printf("\n");
 
         opcion = ingresaEnteroTeclado(&x);
-        while ((opcion < 2 || opcion > 8) && !x){
+        while ((opcion < 2 || opcion > 6) && !x){
             printf("Ingreso invalido, intente nuevamente\n");
             opcion = ingresaEnteroTeclado(&x);
         }
