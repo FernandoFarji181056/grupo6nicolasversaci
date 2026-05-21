@@ -4,45 +4,109 @@
 // En este archivo guardo las validaciones necesarias para cada archivo
 
 
-/*  Esta función solicita un ingreso por teclado
-    y valida si es un número
+/*  Esta funciÃ³n la voy a usar para validar ingresos de carga manual
+    recibe como parÃ¡metros 2 enteros con el minimo y el mÃ¡ximo del rango y un puntero a entero
+    retorna lo siguiente: 1: vÃ¡lido; 0: usuario ingresÃ³ x; -1: error
+*/
+int pedirEnteroRango(int min, int max, int* valor) {
+
+    char input[100];
+
+    char extra;
+
+    int numero;
+
+    int valido = 0;
+
+    while (!valido) {
+
+        fgets(input, sizeof(input), stdin);
+
+        // opciÃ³n salir con x
+        if ((input[0] == 'x' || input[0] == 'X') && input[1] == '\n') {
+
+            return 0;
+        }
+
+        // validar entero
+        if (sscanf(input, "%d %c", &numero, &extra) == 1) {
+
+            // validar rango
+            if (numero >= min && numero <= max) {
+
+                *valor = numero;
+
+                valido = 1;
+
+            } else {
+
+                printf("Error: fuera de rango [%d-%d]\n", min,max
+                );
+            }
+
+        } else {
+
+            printf(
+                "Error: ingreso invalido\n"
+            );
+        }
+    }
+
+    return 1;
+}
+
+
+/*  Esta funciÃ³n solicita un ingreso por teclado
+    y valida si es un nÃºmero
     si es afirmativo lo retorna
     si no lo es continua pidiendo ingresos hasta que lo sea
-    El parámetro que recibe es el texto que acompaña al ingreso del número
+    El parÃ¡metro que recibe es el texto que acompaÃ±a al ingreso del nÃºmero
 */
-int solicitarEntero(char *texto) {
+
+int solicitarEntero(const char *mensaje) {
+
+    char input[100];
+
     int numero;
-    int estado;
 
-    do {
-        printf("%s\n", texto);
-        estado = scanf("%d", &numero);
+    char extra;
 
-        // Si scanf no devuelve 1, no se ingresó un entero
-        if (estado != 1) {
-            printf("Error: Entrada no válida.\n");
-            // Limpiar el búfer de entrada para evitar bucles infinitos
-            while (getchar() != '\n');
+    int valido = 0;
+
+    while (!valido) {
+
+        printf("%s", mensaje);
+
+        fgets(input, sizeof(input), stdin);
+
+        // valido que haya un entero
+        if (sscanf(input, "%d %c", &numero, &extra) == 1) {
+
+            valido = 1;
+
+        } else {
+
+            printf("Error: debe ingresar un numero entero\n");
         }
-    } while (estado != 1); // Continuar hasta que la entrada sea válida
+    }
 
     return numero;
 }
 
 
-/*  Esta función utiliza la de solicitarEntero,
-    valida que el número buscado esté dentro de un rango
+/*  Esta funciÃ³n utiliza la de solicitarEntero,
+    valida que el nÃºmero buscado estÃ© dentro de un rango
     ademas del texto a mostrar recibe como parametros el valor inicial y final
     si esta dentro del rango lo retorna
-    si no lo es continua pidiendo ingresos hasta lo esté
+    si no lo es continua pidiendo ingresos hasta lo estÃ©
 */
-int solicitarEnteroEntre(char *texto, int inicial, int fnal) {
+int solicitarEnteroEntre(const char *texto, int inicial, int fnal) {
 
     int i = solicitarEntero(texto);
     while (i < inicial || i > fnal) {
-        printf("Error: El número ingresado debe estar entre %d y %d.\n", inicial, fnal);
+        printf("Error: El nÃºmero ingresado debe estar entre %d y %d.\n", inicial, fnal);
         i = solicitarEntero(texto);
-    };
+    }
     return i;
 
 }
