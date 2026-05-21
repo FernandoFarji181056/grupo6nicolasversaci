@@ -41,7 +41,8 @@
 
 
                 "..\\libs\\tipoElemento\\implementaciones\\tipo_elemento.c",
-                "..\\libs\\validaciones\\implementaciones\\Validacion_datos.c",                
+                "..\\libs\\validaciones\\implementaciones\\Validacion_datos.c",    
+                "..\\libs\\validaciones\\implementaciones\\Validaciones.c",                
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
