@@ -359,19 +359,13 @@ void ejecutar_TP3_EJ06() {
     int valor;
     int eliminar;
     
-    cantidad = solicitarEnteroEntre(
-    "Ingrese cantidad de elementos: ",
-    1,
-    1000
-    );
+    printf("Ingrese cantidad de elementos: ");
+    scanf("%d", &cantidad);
     
     for (int i = 0; i < cantidad; i++) {
         
-        valor = solicitarEnteroEntre(
-            "Ingrese valor: ",
-            -100000,
-            100000
-        );
+        printf("Ingrese valor: ");
+        scanf("%d", &valor);
         
         p_apilar(p, te_crear(valor));
     }
@@ -379,23 +373,41 @@ void ejecutar_TP3_EJ06() {
     printf("\nPila original:\n");
     
     p_mostrar(p);
-    
-    eliminar = solicitarEnteroEntre(
-    "\nIngrese clave a eliminar: ",
-    -100000,
-    100000
-    );
-    
-    Pila nueva = p_ej6_eliminarclave(p, eliminar);
-    
-    printf("\nNueva pila:\n");
-    
-    p_mostrar(nueva);
-    
-    printf("\nPila original conservada:\n");
-    
-    p_mostrar(p);
 
+    printf("\nIngrese clave a eliminar: ");
+    scanf("%d", &eliminar);
+
+    Pila nuevaIterativa = p_ej6_eliminarclave(p, eliminar);
+    
+    printf("\nNueva pila (iterativa):\n");
+    
+    p_mostrar(nuevaIterativa);
+    
+    Pila nuevaRecursiva = p_ej6_eliminarclave_recursivo(p, eliminar);
+    
+    printf("\nNueva pila (recursiva):\n");
+    
+    p_mostrar(nuevaRecursiva);
+
+    printf("\n=====================================\n");
+
+    printf("Complejidad del algoritmo:\n\n");
+
+    printf("Resolucion iterativa:\n");
+    printf("Complejidad temporal: O(n)\n");
+    printf("Complejidad espacial: O(n)\n\n");
+
+    printf("Resolucion recursiva:\n");
+    printf("Complejidad temporal: O(n)\n");
+    printf("Complejidad espacial: O(n)\n");
+
+    printf("=====================================\n");
+
+    printf("\n=====================================\n");
+    printf("        FIN DEL EJERCICIO 5\n");
+    printf("=====================================\n");
+
+    return;
 }
 
 void ejecutar_TP3_EJ07() {
@@ -410,13 +422,15 @@ void ejecutar_TP3_EJ07() {
     int cantidad1; 
     int cantidad2; 
     int valor; 
-    
-    printf("Cantidad elementos pila 1: "); 
-    scanf("%d", &cantidad1); 
+
+    printf("Cantidad elementos pila 1: ");
+    scanf("%d", &cantidad1);
+
     
     for (int i = 0; i < cantidad1; i++) { 
-        printf("Ingrese valor: "); 
-        scanf("%d", &valor); 
+        
+        printf("Ingrese valor: ");
+        scanf("%d", &valor);
         
         p_apilar(p1, te_crear(valor)); 
     } 
@@ -453,6 +467,22 @@ void ejecutar_TP3_EJ07() {
     printf("\nPila 2:\n"); 
     
     p_mostrar(p2);
+
+    printf("\n=====================================\n");
+    printf("Complejidad del algoritmo:\n");
+    printf("Complejidad temporal: O(n * m)\n");
+    printf("porque para cada elemento de una pila\n");
+    printf("se recorre la otra pila.\n\n");
+    printf("Complejidad espacial: O(n)\n");
+    printf("por el uso de pilas auxiliares.\n");
+
+    printf("=====================================\n");
+
+    printf("\n=====================================\n");
+    printf("        FIN DEL EJERCICIO 7\n");
+    printf("=====================================\n");
+
+    return;
 }
 
 void ejecutar_TP3_EJ08() {
@@ -502,6 +532,28 @@ void ejecutar_TP3_EJ08() {
     printf("\nPila original conservada:\n");
     
     p_mostrar(p);
+
+    printf("\n=====================================\n");
+    
+    printf("Complejidad del algoritmo:\n");
+
+    printf("Complejidad temporal: O(n^2)\n");
+
+    printf("porque para cada elemento\n");
+
+    printf("se vuelve a recorrer la pila.\n\n");
+    
+    printf("Complejidad espacial: O(n)\n");
+    
+    printf("por las pilas auxiliares utilizadas.\n");
+    
+    printf("=====================================\n");
+
+    printf("\n=====================================\n");
+    printf("        FIN DEL EJERCICIO 8\n");
+    printf("=====================================\n");
+
+    return;
 
 }
 
