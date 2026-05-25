@@ -349,9 +349,15 @@ void ejecutar_TP3_EJ05() {
 
 
 void ejecutar_TP3_EJ06() {
-    
 
-    printf("Ejercicio 6 \n");
+    clearScreen();
+
+    int min_pila = 1;
+    int max_pila = 1000;
+
+    printf("============================================\n");
+    printf("           Elegiste el ejercicio 6\n");
+    printf("============================================\n");
 
     Pila p = p_crear();
     
@@ -359,13 +365,11 @@ void ejecutar_TP3_EJ06() {
     int valor;
     int eliminar;
     
-    printf("Ingrese cantidad de elementos: ");
-    scanf("%d", &cantidad);
+    cantidad = solicitarEnteroEntre("Ingrese cantidad de elementos: ", min_pila, max_pila);
     
     for (int i = 0; i < cantidad; i++) {
-        
-        printf("Ingrese valor: ");
-        scanf("%d", &valor);
+
+        valor = solicitarEnteroEntre( "Ingrese valor: ", min_pila, max_pila );
         
         p_apilar(p, te_crear(valor));
     }
@@ -374,8 +378,7 @@ void ejecutar_TP3_EJ06() {
     
     p_mostrar(p);
 
-    printf("\nIngrese clave a eliminar: ");
-    scanf("%d", &eliminar);
+    eliminar = solicitarEnteroEntre( "\nIngrese clave a eliminar: ", min_pila, max_pila );
 
     Pila nuevaIterativa = p_ej6_eliminarclave(p, eliminar);
     
@@ -404,16 +407,22 @@ void ejecutar_TP3_EJ06() {
     printf("=====================================\n");
 
     printf("\n=====================================\n");
-    printf("        FIN DEL EJERCICIO 5\n");
+    printf("        FIN DEL EJERCICIO 6\n");
     printf("=====================================\n");
 
     return;
 }
 
 void ejecutar_TP3_EJ07() {
-    
 
-    printf("Ejercicio 7 \n");
+    clearScreen();
+
+    int min_pila = 1;
+    int max_pila = 1000;
+
+    printf("============================================\n");
+    printf("           Elegiste el ejercicio 7\n");
+    printf("============================================\n");
     
     Pila p1 = p_crear(); 
     
@@ -423,24 +432,21 @@ void ejecutar_TP3_EJ07() {
     int cantidad2; 
     int valor; 
 
-    printf("Cantidad elementos pila 1: ");
-    scanf("%d", &cantidad1);
+    cantidad1 = solicitarEnteroEntre( "Cantidad elementos pila 1: ", min_pila, max_pila );
 
     
     for (int i = 0; i < cantidad1; i++) { 
-        
-        printf("Ingrese valor: ");
-        scanf("%d", &valor);
+
+        valor = solicitarEnteroEntre( "Ingrese valor: ", min_pila, max_pila );
         
         p_apilar(p1, te_crear(valor)); 
     } 
     
-    printf("\nCantidad elementos pila 2: "); 
-    scanf("%d", &cantidad2); 
+
+    cantidad2 = solicitarEnteroEntre( "\nCantidad elementos pila 2: ", min_pila, max_pila );
     
     for (int i = 0; i < cantidad2; i++) { 
-        printf("Ingrese valor: "); 
-        scanf("%d", &valor); 
+        valor = solicitarEnteroEntre( "Ingrese valor: ", min_pila, max_pila );
         p_apilar(p2, te_crear(valor)); 
     } 
     
@@ -486,7 +492,15 @@ void ejecutar_TP3_EJ07() {
 }
 
 void ejecutar_TP3_EJ08() {
-    
+
+    clearScreen();
+
+    int min_pila = 1;
+    int max_pila = 1000;
+
+    printf("============================================\n");
+    printf("           Elegiste el ejercicio 8\n");
+    printf("============================================\n");
 
     printf("Ejercicio 8 \n");
     
@@ -494,13 +508,11 @@ void ejecutar_TP3_EJ08() {
     
     int cantidad;
     int valor;
-    
-    printf("Cantidad de elementos: ");
-    scanf("%d", &cantidad);
+
+    cantidad = solicitarEnteroEntre( "Cantidad de elementos: ", min_pila, max_pila );
     
     for (int i = 0; i < cantidad; i++) {
-        printf("Ingrese valor: ");
-        scanf("%d", &valor);
+        valor = solicitarEnteroEntre( "Ingrese valor: ", min_pila, max_pila );
         
         p_apilar(p, te_crear(valor));
     }
