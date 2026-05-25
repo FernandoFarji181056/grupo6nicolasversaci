@@ -654,30 +654,3 @@ return resultado;
 //```
 
 }
-
-
-
-
-
-Pila aux1 = p_crear();
-
-while (!p_es_vacia(p1)) {
-
-    TipoElemento x = p_desapilar(p1);
-
-    p_apilar(aux1, x);
-
-    if (existeClave(p2, x->clave) &&
-        !existeClave(resultado, x->clave)) {
-
-        p_apilar(resultado, te_crear(x->clave));
-    }
-}
-
-restaurarPila(p1, aux1);
-
-return resultado;
-```
-
-}
-
