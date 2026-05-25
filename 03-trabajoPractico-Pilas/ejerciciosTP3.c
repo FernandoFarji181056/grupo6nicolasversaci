@@ -359,12 +359,19 @@ void ejecutar_TP3_EJ06() {
     int valor;
     int eliminar;
     
-    printf("Ingrese cantidad de elementos: ");
-    scanf("%d", &cantidad);
+    cantidad = solicitarEnteroEntre(
+    "Ingrese cantidad de elementos: ",
+    1,
+    1000
+    );
     
     for (int i = 0; i < cantidad; i++) {
-        printf("Ingrese valor: ");
-        scanf("%d", &valor);
+        
+        valor = solicitarEnteroEntre(
+            "Ingrese valor: ",
+            -100000,
+            100000
+        );
         
         p_apilar(p, te_crear(valor));
     }
@@ -373,8 +380,11 @@ void ejecutar_TP3_EJ06() {
     
     p_mostrar(p);
     
-    printf("\nIngrese clave a eliminar: ");
-    scanf("%d", &eliminar);
+    eliminar = solicitarEnteroEntre(
+    "\nIngrese clave a eliminar: ",
+    -100000,
+    100000
+    );
     
     Pila nueva = p_ej6_eliminarclave(p, eliminar);
     
