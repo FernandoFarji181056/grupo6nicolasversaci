@@ -482,12 +482,12 @@ con todos sus elementos.
 */
 static void restaurarPila(Pila original, Pila auxiliar) {
 
-//```
+
 while (!p_es_vacia(auxiliar)) {
 
     p_apilar(original, p_desapilar(auxiliar));
 }
-//```
+
 
 }
 
@@ -498,7 +498,7 @@ La pila original no se pierde.
 */
 static bool existeClave(Pila p, int clave) {
 
-//```
+
 Pila aux = p_crear();
 
 bool existe = false;
@@ -518,7 +518,6 @@ while (!p_es_vacia(p)) {
 restaurarPila(p, aux);
 
 return existe;
-//```
 
 }
 
@@ -528,23 +527,21 @@ ocurrencias de la clave recibida.
 La pila original no se pierde.
 */
 Pila p_ej6_eliminarclave(Pila p, int clave) {
-
-//```
-Pila aux = p_crear();
-
-Pila resultado = p_crear();
-
-while (!p_es_vacia(p)) {
-
-    TipoElemento x = p_desapilar(p);
-
-    p_apilar(aux, x);
-
-    if (x->clave != clave) {
-
-        p_apilar(resultado, x);
+    
+    Pila aux = p_crear();
+    
+    Pila resultado = p_crear();
+    
+    while (!p_es_vacia(p)) {
+        TipoElemento x = p_desapilar(p);
+        
+        p_apilar(aux, x);
+        
+        if (x->clave != clave) {
+            
+            p_apilar(resultado, x);
+        }
     }
-}
 
 restaurarPila(p, aux);
 
@@ -556,8 +553,36 @@ while (!p_es_vacia(resultado)) {
 }
 
 return final;
-//```
 
+}
+
+/*  Esta funcion resuelve el ejercicio 6
+    de forma recursiva.
+    Elimina todas las ocurrencias de una clave
+    sin perder la pila original.
+*/
+Pila p_ej6_eliminarclave_recursivo(Pila p, int clave) {
+
+    Pila resultado = p_crear();
+
+    if (p_es_vacia(p)) {
+
+        return resultado;
+    }
+
+    TipoElemento x = p_desapilar(p);
+
+    resultado =
+        p_ej6_eliminarclave_recursivo(p, clave);
+
+    p_apilar(p, x);
+
+    if (x->clave != clave) {
+
+        p_apilar(resultado, te_crear(x->clave));
+    }
+
+    return resultado;
 }
 
 // EJERCICIO 7
@@ -570,7 +595,7 @@ Las pilas originales no se pierden.
 */
 Pila p_ej7_elementoscomunes(Pila p1, Pila p2) {
 
-//```
+
 Pila resultado = p_crear();
 
 Pila aux1 = p_crear();
@@ -591,7 +616,7 @@ while (!p_es_vacia(p1)) {
 restaurarPila(p1, aux1);
 
 return resultado;
-//```
+
 
 }
 
@@ -604,53 +629,56 @@ Retorna una nueva pila con las claves
 aparecen en la pila original.
 La pila original no se pierde.
 */
+
 Pila p_ej8_sacarrepetidos(Pila p) {
 
-//```
-Pila resultado = p_crear();
+    Pila resultado = p_crear();
 
-Pila aux = p_crear();
+    Pila aux = p_crear();
 
-while (!p_es_vacia(p)) {
+    while (!p_es_vacia(p)) {
 
-    TipoElemento actual = p_desapilar(p);
+        TipoElemento x = p_desapilar(p);
 
-    p_apilar(aux, actual);
-
-    if (!existeClave(resultado, actual->clave)) {
-
-        int contador = 0;
-
-        Pila aux2 = p_crear();
-
-        while (!p_es_vacia(aux)) {
-
-            TipoElemento x = p_desapilar(aux);
-
-            p_apilar(aux2, x);
-
-            if (x->clave == actual->clave) {
-
-                contador++;
-            }
-        }
-
-        restaurarPila(aux, aux2);
-
-        int* cantidad = malloc(sizeof(int));
-
-        *cantidad = contador;
-
-        TipoElemento nuevo =
-            te_crear_con_valor(actual->clave, cantidad);
-
-        p_apilar(resultado, nuevo);
+        p_apilar(aux, x);
     }
-}
 
-restaurarPila(p, aux);
+    while (!p_es_vacia(aux)) {
 
-return resultado;
-//```
+        TipoElemento actual = p_desapilar(aux);
 
+        p_apilar(p, actual);
+
+        if (!existeClave(resultado, actual->clave)) {
+
+            int contador = 0;
+
+            Pila aux2 = p_crear();
+
+            while (!p_es_vacia(p)) {
+
+                TipoElemento x = p_desapilar(p);
+
+                p_apilar(aux2, x);
+
+                if (x->clave == actual->clave) {
+
+                    contador++;
+                }
+            }
+
+            restaurarPila(p, aux2);
+
+            int* cantidad = malloc(sizeof(int));
+
+            *cantidad = contador;
+
+            TipoElemento nuevo =
+                te_crear_con_valor(actual->clave, cantidad);
+
+            p_apilar(resultado, nuevo);
+        }
+    }
+
+    return resultado;
 }
