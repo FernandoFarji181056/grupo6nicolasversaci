@@ -561,7 +561,7 @@ return final;
     Elimina todas las ocurrencias de una clave
     sin perder la pila original.
 */
-Pila p_ej6_eliminarclave_recursivo(Pila p, int clave) {
+Pila p_ej6_eliminarclaverecursiva(Pila p, int clave) {
 
     Pila resultado = p_crear();
 
