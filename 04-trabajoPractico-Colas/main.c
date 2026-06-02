@@ -22,7 +22,7 @@ int main() {
     do{
         clearScreen();
         printf("\n");
-        printf("--------TP04 colas--------\n");
+        printf("--------TP04 Colas--------\n");
         printf("\n");
         //printf("Ejercicio 1: \n");
         printf("Ejercicio 2: \n");
