@@ -2,9 +2,9 @@
 #define TP_COLAS_H
 
 #include <stdbool.h>
-#include "colas.h"
-#include "listas.h"
-#include "pilas.h"
+#include "../libs/pilas/headers/pilas.h"
+#include "../libs/listas/headers/listas.h"
+#include "../libs/colas/headers/colas.h"
 
 /**
     2.	Resolver los siguientes puntos:
