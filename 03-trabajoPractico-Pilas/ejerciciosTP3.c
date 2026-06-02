@@ -352,7 +352,7 @@ void ejecutar_TP3_EJ06() {
 
     clearScreen();
 
-    int min_pila = 1;
+    int min_pila = 0;
     int max_pila = 1000;
 
     printf("============================================\n");
@@ -417,7 +417,7 @@ void ejecutar_TP3_EJ07() {
 
     clearScreen();
 
-    int min_pila = 1;
+    int min_pila = 0;
     int max_pila = 1000;
 
     printf("============================================\n");
@@ -495,7 +495,7 @@ void ejecutar_TP3_EJ08() {
 
     clearScreen();
 
-    int min_pila = 1;
+    int min_pila = 0;
     int max_pila = 1000;
 
     printf("============================================\n");
