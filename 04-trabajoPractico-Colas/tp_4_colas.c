@@ -5,6 +5,8 @@
 #include "../libs/validaciones/headers/Validacion_datos.h"
 #include "tp_4_colas.h"
 #include "../libs/colas/headers/colas.h"
+#inlcude "../libs/pilas/headers/pilas.h"
+#include "../libs/listas/headers/listas.h"
 #include "../libs/validaciones/headers/validaciones.h"
 
 //Ejercicio 2
