@@ -573,7 +573,7 @@ Pila p_ej6_eliminarclaverecursiva(Pila p, int clave) {
     TipoElemento x = p_desapilar(p);
 
     resultado =
-        p_ej6_eliminarclave_recursivo(p, clave);
+        p_ej6_eliminarclaverecursiva(p, clave);
 
     p_apilar(p, x);
 
