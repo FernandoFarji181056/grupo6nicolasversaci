@@ -386,7 +386,7 @@ void ejecutar_TP3_EJ06() {
     
     p_mostrar(nuevaIterativa);
     
-    Pila nuevaRecursiva = p_ej6_eliminarclave_recursivo(p, eliminar);
+    Pila nuevaRecursiva = p_ej6_eliminarclaverecursiva(p, eliminar);
     
     printf("\nNueva pila (recursiva):\n");
     
