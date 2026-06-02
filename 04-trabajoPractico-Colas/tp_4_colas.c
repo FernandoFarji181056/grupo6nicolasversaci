@@ -5,7 +5,7 @@
 #include "../libs/validaciones/headers/Validacion_datos.h"
 #include "tp_4_colas.h"
 #include "../libs/colas/headers/colas.h"
-#inlcude "../libs/pilas/headers/pilas.h"
+#include "../libs/pilas/headers/pilas.h"
 #include "../libs/listas/headers/listas.h"
 #include "../libs/validaciones/headers/validaciones.h"
 
@@ -38,9 +38,49 @@ Cola c_ej2_invertir(Cola c){
 }
 
 //Ejercicio 3 
+/*  Esta función recibe 2 colas,
+    determina si sus contenidos son iguales
+    tanto en posicion como en clave,
+    sin destruir las colas originales
+*/
 
 bool c_ej3_iguales(Cola c1, Cola c2){
+  
+  Cola auxiliar = c_crear();
+  
+  bool iguales = true;
+  
+  TipoElemento e1;
+  TipoElemento e2;
+  
+  while (!c_es_vacia(c1) && !c_es_vacia(c2)) {
+    
+    e1 = c_desencolar(c1);
+    e2 = c_desencolar(c2);
+    
+    if (e1->clave != e2->clave) {
+      iguales = false;
+    }
+    
+    c_encolar(auxiliar, e1);
+    c_encolar(auxiliar, e2);   
+  }
+  
+  if (!c_es_vacia(c1) || !c_es_vacia(c2)) {
+    iguales = false;
+  }
+  
+  while (!c_es_vacia(auxiliar)) {
+    e1 = c_desencolar(auxiliar);
+    c_encolar(c1, e1);
+    
+    e2 = c_desencolar(auxiliar);
+    c_encolar(c2, e2);
+  }
+
+  return iguales;
 }
+
 
 //Ejercicio 4 
 
