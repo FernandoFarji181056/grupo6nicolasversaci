@@ -466,7 +466,7 @@ Cola c_ej5_divisortotal(Cola c){
     
 //Ejercicio 6
 Lista c_ej6_comunesapilaycola(Pila p, Cola c){
-
+    
     Lista resultado = l_crear();
 
     Pila pauxiliar = p_crear();
@@ -483,6 +483,8 @@ Lista c_ej6_comunesapilaycola(Pila p, Cola c){
         xPila = p_desapilar(p);
 
         posPila++;
+
+        p_apilar(pauxiliar, xPila);
 
         posCola = 0;
 
@@ -504,22 +506,23 @@ Lista c_ej6_comunesapilaycola(Pila p, Cola c){
                 l_agregar(resultado, nuevo);
             }
 
-            c_encolar(cAux, xCola);
+            c_encolar(cauxiliar, xCola);
         }
 
-    restaurarcola(c,cauxiliar)
+        restaurarcola(c, cauxiliar);
+    }
 
-    // Restauramos pila original
-    while (!p_es_vacia(pAux)) {
+    // restaurar pila original
+    while (!p_es_vacia(pauxiliar)) {
 
-        xPila = p_desapilar(pAux);
+        xPila = p_desapilar(pauxiliar);
 
         p_apilar(p, xPila);
     }
 
     return resultado;
 }
-
+   
 //Ejercicio 7 
 Cola c_ej7_atenderclientes(Cola c1, Cola c2, Cola c3, int tiempoatencion){
 }
