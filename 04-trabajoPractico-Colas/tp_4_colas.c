@@ -57,6 +57,20 @@ Cola cargarColaManual(int min_cola, int max_cola) {
     return C;
 }
 
+//Esta función permite restaurar la cola original
+
+void restaurarcola(Cola destino, Cola auxiliar) {
+
+    TipoElemento x;
+
+    while (!c_es_vacia(auxiliar)) {
+
+        x = c_desencolar(auxiliar);
+
+        c_encolar(destino, x);
+    }
+}
+
 //Ejercicio 2
 
 // EJERCICIO 2.a
@@ -65,6 +79,7 @@ Cola cargarColaManual(int min_cola, int max_cola) {
     caso contrario retorna false.
     La cola original no debe destruirse.
 */
+
 bool c_ej2_existeclave(Cola c, int clave){
 
     Cola auxiliar = c_crear();
@@ -85,13 +100,7 @@ bool c_ej2_existeclave(Cola c, int clave){
         c_encolar(auxiliar, x);
     }
 
-    // restaurar cola original
-    while (!c_es_vacia(auxiliar)) {
-
-        x = c_desencolar(auxiliar);
-
-        c_encolar(c, x);
-    }
+    restaurarcola(c,auxiliar);
 
     return existe;
 
@@ -114,7 +123,6 @@ Cola c_ej2_colarelemento(Cola c, int posicionordinal, TipoElemento X){
 
     int longitud = c_ej2_contarelementos(c);
 
-    // validar posicion
     if (posicionordinal < 1 || posicionordinal > longitud + 1) {
 
         return c;
@@ -122,7 +130,6 @@ Cola c_ej2_colarelemento(Cola c, int posicionordinal, TipoElemento X){
 
     while (!c_es_vacia(c)) {
 
-        // insertar antes
         if (posicion == posicionordinal) {
 
             c_encolar(auxiliar, X);
@@ -135,20 +142,13 @@ Cola c_ej2_colarelemento(Cola c, int posicionordinal, TipoElemento X){
         posicion++;
     }
 
-    // insertar al final
     if (posicionordinal == longitud + 1) {
 
         c_encolar(auxiliar, X);
     }
 
-    // restaurar
-    while (!c_es_vacia(auxiliar)) {
-
-        actual = c_desencolar(auxiliar);
-
-        c_encolar(c, actual);
-    }
-
+    restaurarcola(c,auxiliar);
+    
     return c;
 }
 
@@ -175,14 +175,8 @@ Cola c_ej2_sacarelemento(Cola c, int clave){
         }
     }
 
-    // restaurar
-    while (!c_es_vacia(auxiliar)) {
-
-        x = c_desencolar(auxiliar);
-
-        c_encolar(c, x);
-    }
-
+    restaurarcola(c,auxiliar);
+    
     return c;
 }
 
@@ -209,13 +203,7 @@ int c_ej2_contarelementos(Cola c){
         c_encolar(auxiliar, x);
     }
 
-    // restaurar cola original
-    while (!c_es_vacia(auxiliar)) {
-
-        x = c_desencolar(auxiliar);
-
-        c_encolar(c, x);
-    }
+    restaurarcola(c,auxiliar);
 
     return contador;
 }
@@ -242,13 +230,7 @@ Cola c_ej2_copiar(Cola c){
         c_encolar(auxiliar, x);
     }
 
-    // restaurar original
-    while (!c_es_vacia(auxiliar)) {
-
-        x = c_desencolar(auxiliar);
-
-        c_encolar(c, x);
-    }
+    restaurarcola(c,auxiliar);
 
     return copia;
 
@@ -280,15 +262,8 @@ Cola c_ej2_invertir(Cola c){
         c_encolar(auxiliar, x);
     }
 
-    // restaurar cola original
-    while (!c_es_vacia(auxiliar)) {
+    restaurarcola(c,auxiliar);
 
-        x = c_desencolar(auxiliar);
-
-        c_encolar(c, x);
-    }
-
-    // pila -> cola invertida
     while (!p_es_vacia(p)) {
 
         x = p_desapilar(p);
@@ -416,7 +391,7 @@ Cola  c_ej4_colanorepetidos(Cola c){
     Retorna una nueva cola con los divisores
     totales y parciales de la cola original.
 */
-cola c_ej5_divisortotal(Cola c){
+Cola c_ej5_divisortotal(Cola c){
     
     Cola resultado = c_crear();
     Cola auxiliar = c_crear();
