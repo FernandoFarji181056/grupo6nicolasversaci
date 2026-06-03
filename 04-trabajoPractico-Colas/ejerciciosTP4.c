@@ -20,7 +20,129 @@ void ejecutar_TP4_EJ02() {
     printf("           Elegiste el ejercicio 2\n");
     printf("============================================\n");
 
+    Cola C = cargarColaManual(1, 1000);
 
+    int opcion;
+    int clave;
+    int posicion;
+
+    TipoElemento X;
+
+    do {
+
+        printf("\n");
+        printf("EJERCICIO 2 - OPERACIONES CON COLAS\n\n");
+
+        printf("1 - Buscar elemento\n");
+        printf("2 - Insertar elemento en posicion\n");
+        printf("3 - Eliminar elemento\n");
+        printf("4 - Contar elementos\n");
+        printf("5 - Copiar cola\n");
+        printf("6 - Invertir cola\n");
+        printf("0 - Salir\n\n");
+
+        printf("Seleccione una opcion: ");
+        scanf("%d", &opcion);
+
+        switch(opcion) {
+
+            case 1:
+
+                printf("Ingrese clave a buscar: ");
+                scanf("%d", &clave);
+
+                if (c_ej2_existeclave(C, clave)) {
+
+                    printf("La clave SI existe en la cola\n");
+
+                } else {
+
+                    printf("La clave NO existe en la cola\n");
+                }
+
+                break;
+
+            case 2:
+
+                printf("Ingrese posicion ordinal: ");
+                scanf("%d", &posicion);
+
+                printf("Ingrese elemento a insertar: ");
+                scanf("%d", &clave);
+
+                X = te_crear(clave);
+
+                c_ej2_colarelemento(C, posicion, X);
+
+                printf("Cola actualizada:\n");
+                c_mostrar(C);
+
+                break;
+
+            case 3:
+
+                printf("Ingrese clave a eliminar: ");
+                scanf("%d", &clave);
+
+                c_ej2_sacarelemento(C, clave);
+
+                printf("Cola actualizada:\n");
+                c_mostrar(C);
+
+                break;
+
+            case 4:
+
+                printf("Cantidad de elementos: %d\n",
+                       c_ej2_contarelementos(C));
+
+                break;
+
+            case 5: {
+
+                Cola copia = c_ej2_copiar(C);
+
+                printf("Copia de la cola:\n");
+
+                c_mostrar(copia);
+
+                break;
+            }
+
+            case 6: {
+
+                Cola invertida = c_ej2_invertir(C);
+
+                printf("Cola invertida:\n");
+
+                c_mostrar(invertida);
+
+                break;
+            }
+
+            case 0:
+
+                printf("Saliendo...\n");
+
+                break;
+
+            default:
+
+                printf("Opcion invalida\n");
+        }
+
+    } while (opcion != 0);
+
+    printf("\nComplejidades:\n");
+    printf("- Buscar elemento: O(n)\n");
+    printf("- Insertar elemento: O(n)\n");
+    printf("- Eliminar elemento: O(n)\n");
+    printf("- Contar elementos: O(n)\n");
+    printf("- Copiar cola: O(n)\n");
+    printf("- Invertir cola: O(n)\n");
+
+    system("pause");
+    
     printf("\n=====================================\n");
     printf("         FIN DEL EJERCICIO 2\n");
     printf("=====================================\n");
