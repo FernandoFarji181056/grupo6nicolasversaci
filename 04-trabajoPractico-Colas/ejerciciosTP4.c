@@ -37,8 +37,8 @@ void ejecutar_TP4_EJ03() {
 
     clearScreen();
 
-    int min_pila = 1;
-    int max_pila = 1000;
+    int min_cola = 1;
+    int max_cola = 1000;
     
     printf("================================================\n");
     printf("           Elegiste el ejercicio 3\n");
@@ -46,7 +46,7 @@ void ejecutar_TP4_EJ03() {
     
     printf("EJERCICIO 3 - COMPARAR COLAS\n\n");
 
-    Cola C1 = cargarColaManual( min_pila, max_pila);
+    Cola C1 = cargarColaManual( min_cola, max_cola);
 
     printf("\n");
 
@@ -94,8 +94,8 @@ void ejecutar_TP3_EJ04() {
 
     clearScreen();
 
-    int min_pila= 1;
-    int max_pila=1000;
+    int min_cola= 1;
+    int max_cola=1000;
 
     printf("========================================================\n");
     printf("           Elegiste el ejercicio 4\n");
@@ -103,7 +103,7 @@ void ejecutar_TP3_EJ04() {
     
     printf("EJERCICIO 4 - ELEMENTOS NO REPETIDOS EN UNA COLA\n\n");
 
-    Cola C = cargarColaManual(min_pila, max_pila);
+    Cola C = cargarColaManual(min_cola, max_cola);
 
     printf("\nCOLA ORIGINAL:\n");
     c_mostrar(C);
@@ -138,11 +138,49 @@ void ejecutar_TP3_EJ05() {
 
     clearScreen();
 
+    int min_cola=2;
+    int max_cola=1000;
+
     printf("========================================================\n");
     printf("           Elegiste el ejercicio 5\n");
     printf("======================================================\n");
+    
+    printf("EJERCICIO 5 - DIVISORES TOTALES Y PARCIALES\n\n");
 
+    Cola C = cargarColaManual(2, 1000);
 
+    printf("\nCOLA ORIGINAL:\n");
+    c_mostrar(C);
+
+    Cola resultado = c_ej5_divisortotal(C);
+
+    printf("\nDIVISORES ENCONTRADOS:\n\n");
+
+    while (!c_es_vacia(resultado)) {
+
+        TipoElemento x = c_desencolar(resultado);
+
+        bool esTotal = *((bool*) x->valor);
+
+        if (esTotal) {
+
+            printf("%d -> DIVISOR TOTAL\n", x->clave);
+
+        } else {
+
+            printf("%d -> DIVISOR PARCIAL\n", x->clave);
+        }
+    }
+
+    printf("\nVERIFICAMOS QUE LA COLA ORIGINAL NO FUE MODIFICADA:\n");
+    c_mostrar(C);
+
+    printf("\n");
+    printf("Complejidad algoritmica: O(n^2)\n");
+    printf("Para cada elemento de la cola se recorre nuevamente toda la cola.\n");
+
+    system("pause");
+    
     printf("\n=====================================\n");
     printf("        FIN DEL EJERCICIO 5\n");
     printf("=====================================\n");
