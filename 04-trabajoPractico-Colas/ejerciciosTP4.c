@@ -16,11 +16,14 @@ void ejecutar_TP4_EJ02() {
 
     clearScreen();
 
+    int min_cola=1
+    int max_cola=1000
+
     printf("============================================\n");
     printf("           Elegiste el ejercicio 2\n");
     printf("============================================\n");
 
-    Cola C = cargarColaManual(1, 1000);
+    Cola C = cargarColaManual(min_cola, max_cola);
 
     int opcion;
     int clave;
@@ -148,8 +151,6 @@ void ejecutar_TP4_EJ02() {
     printf("=====================================\n");
 
     return;
-
-
 }
 
 /*  Esta función pertenece al ejercicio 3
@@ -212,7 +213,7 @@ void ejecutar_TP4_EJ03() {
 /*  Esta función pertenece al ejercicio 4
     del TP de colas 
 */
-void ejecutar_TP3_EJ04() {
+void ejecutar_TP4_EJ04() {
 
     clearScreen();
 
@@ -256,7 +257,7 @@ void ejecutar_TP3_EJ04() {
 /*  Esta función pertenece al ejercicio 5
     del TP de colas
 */
-void ejecutar_TP3_EJ05() {
+void ejecutar_TP4_EJ05() {
 
     clearScreen();
 
@@ -269,7 +270,7 @@ void ejecutar_TP3_EJ05() {
     
     printf("EJERCICIO 5 - DIVISORES TOTALES Y PARCIALES\n\n");
 
-    Cola C = cargarColaManual(2, 1000);
+    Cola C = cargarColaManual(min_cola, max_cola);
 
     printf("\nCOLA ORIGINAL:\n");
     c_mostrar(C);
@@ -312,7 +313,7 @@ void ejecutar_TP3_EJ05() {
 }
 
 
-void ejecutar_TP3_EJ06() {
+void ejecutar_TP4_EJ06() {
     
 
     printf("Ejercicio 6 \n");
@@ -322,7 +323,7 @@ void ejecutar_TP3_EJ06() {
     printf("=====================================\n");
 
     printf("\n=====================================\n");
-    printf("        FIN DEL EJERCICIO 5\n");
+    printf("        FIN DEL EJERCICIO 6\n");
     printf("=====================================\n");
 
     return;
@@ -343,19 +344,4 @@ void ejecutar_TP4_EJ07() {
     return;
 }
 
-void ejecutar_TP4_EJ08() {
-    
 
-    printf("Ejercicio 8 \n");
-    
-    
-    
-    printf("=====================================\n");
-
-    printf("\n=====================================\n");
-    printf("        FIN DEL EJERCICIO 8\n");
-    printf("=====================================\n");
-
-    return;
-
-}
