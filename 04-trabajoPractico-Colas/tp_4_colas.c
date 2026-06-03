@@ -466,6 +466,58 @@ Cola c_ej5_divisortotal(Cola c){
     
 //Ejercicio 6
 Lista c_ej6_comunesapilaycola(Pila p, Cola c){
+
+    Lista resultado = l_crear();
+
+    Pila pauxiliar = p_crear();
+    Cola cauxiliar = c_crear();
+
+    TipoElemento xPila;
+    TipoElemento xCola;
+
+    int posPila = 0;
+    int posCola;
+
+    while (!p_es_vacia(p)) {
+
+        xPila = p_desapilar(p);
+
+        posPila++;
+
+        posCola = 0;
+
+        while (!c_es_vacia(c)) {
+
+            xCola = c_desencolar(c);
+
+            posCola++;
+
+            if (xPila->clave == xCola->clave) {
+
+                char* texto = malloc(50 * sizeof(char));
+
+                sprintf(texto, "%d:%d", posPila, posCola);
+
+                TipoElemento nuevo =
+                    te_crear_con_valor(xPila->clave, texto);
+
+                l_agregar(resultado, nuevo);
+            }
+
+            c_encolar(cAux, xCola);
+        }
+
+    restaurarcola(c,cauxiliar)
+
+    // Restauramos pila original
+    while (!p_es_vacia(pAux)) {
+
+        xPila = p_desapilar(pAux);
+
+        p_apilar(p, xPila);
+    }
+
+    return resultado;
 }
 
 //Ejercicio 7 
