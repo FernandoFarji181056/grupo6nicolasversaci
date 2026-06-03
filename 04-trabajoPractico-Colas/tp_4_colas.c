@@ -10,6 +10,53 @@
 #include "../libs/validaciones/headers/validaciones.h"
 #include "colas_auxiliares.h"
 
+/*  Esta función es para cargar una pila en forma manual
+    recibe 2 parámetros, números enteros que definen el rango
+    de los números que puedo ingresar en la pila
+    arma la pila con los valores ingresados dentro del rango
+    retorna la pila
+*/
+
+Pila cargarPilaManual(int min_pila, int max_pila) {
+
+    // controlo que el rango ingresado sea valido
+    if (min_pila > max_pila) {
+
+        printf("Error: rango invalido\n");
+
+        return p_crear();
+    }
+
+    Pila P = p_crear();
+
+    int numero;
+    int estado = 1;
+
+    printf("Vamos a armar nuestra pila:\n");
+    printf("Ingrese numeros entre %d y %d\n", min_pila, max_pila);
+    printf("Ingrese x para terminar\n\n");
+
+    while (estado != 0) {
+
+        printf("-> ");
+
+        estado = pedirEnteroRango(min_pila, max_pila, &numero);
+
+        /*
+            estado == 1 -> numero valido
+            estado == 0 -> salir
+            estado == -1 -> invalido
+        */
+
+        if (estado == 1) {
+
+            p_apilar(P, te_crear(numero));
+        }
+    }
+
+    return P;
+}
+
 /*  Esta función es para cargar una cola en forma manual
     recibe 2 parámetros, números enteros que definen el rango
     de los números que puedo ingresar en la cola
