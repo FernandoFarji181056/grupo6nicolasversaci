@@ -6,7 +6,6 @@
 
 Colas cargarColasManual(Cola C1, Cola C2);
 void restaurarcola (Cola destino, Cola auxiliar);
-int longitudcola (Cola c);
 Pila cargarPilaManual (int min_pila, int max_pila);
 
 #endif
