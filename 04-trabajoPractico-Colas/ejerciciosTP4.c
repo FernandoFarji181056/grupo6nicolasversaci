@@ -312,59 +312,24 @@ void ejecutar_TP4_EJ05() {
 
 }
 
-
 void ejecutar_TP4_EJ06() {
-    int min=1;
-    int max=1000;
-    
+
+    clearScreen();
+
+    int min = 1;
+    int max = 1000;
+
     printf("========================================================\n");
     printf("           Elegiste el ejercicio 6\n");
-    printf("======================================================\n");
+    printf("========================================================\n");
 
     printf("EJERCICIO 6 - VALORES COMUNES ENTRE PILA Y COLA\n\n");
 
-    Pila p = p_crear();
+    printf("CARGA DE PILA\n");
+    Pila p = cargarPilaManual(min, max);
 
-    TipoElemento X;
-
-    char buffer[100];
-
-    int numero;
-
-    bool salir = false;
-
-    Cola c= cargarColaManual(min,max)
-    salir = false;
-
-    // CARGA COLA
     printf("\nCARGA DE COLA\n");
-
-    while (!salir) {
-
-        printf("Ingrese numero para cola: ");
-
-        fgets(buffer, 100, stdin);
-
-        buffer[strcspn(buffer, "\n")] = '\0';
-
-        if ((buffer[0] == 'X' || buffer[0] == 'x')
-            && strlen(buffer) == 1) {
-
-            salir = true;
-
-        } else if (validarEntero(buffer)) {
-
-            numero = atoi(buffer);
-
-            X = te_crear(numero);
-
-            c_encolar(c, X);
-
-        } else {
-
-            printf("Entrada invalida.\n");
-        }
-    }
+    Cola c = cargarColaManual(min, max);
 
     printf("\nPILA:\n");
     p_mostrar(p);
@@ -395,18 +360,15 @@ void ejecutar_TP4_EJ06() {
     }
 
     printf("\nComplejidad algoritmica: O(n*m)\n");
-    printf("Se recorre la cola completa por cada elemento de la pila.\n");
 
-    system("pause");    
-
-    printf("=====================================\n");
+    system("pause");
 
     printf("\n=====================================\n");
     printf("        FIN DEL EJERCICIO 6\n");
     printf("=====================================\n");
-
-    return;
 }
+
+
 
 void ejecutar_TP4_EJ07() {
     
