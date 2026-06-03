@@ -8,6 +8,54 @@
 #include "../libs/pilas/headers/pilas.h"
 #include "../libs/listas/headers/listas.h"
 #include "../libs/validaciones/headers/validaciones.h"
+#include "colas_auxiliares.h"
+
+/*  Esta función es para cargar una cola en forma manual
+    recibe 2 parámetros, números enteros que definen el rango
+    de los números que puedo ingresar en la cola
+    arma la pila con los valores ingresados dentro del rango
+    retorna la cola
+*/
+
+Cola cargarColaManual(int min_cola, int max_cola) {
+
+    // controlo que el rango ingresado sea valido
+    if (min_cola > max_cola) {
+
+        printf("Error: rango invalido\n");
+
+        return c_crear();
+    }
+
+    Cola C = c_crear();
+
+    int numero;
+    int estado = 1;
+
+    printf("Vamos a armar nuestra cola:\n");
+    printf("Ingrese numeros entre %d y %d\n", min_cola, max_cola);
+    printf("Ingrese x para terminar\n\n");
+
+    while (estado != 0) {
+
+        printf("-> ");
+
+        estado = pedirEnteroRango(min_cola, max_cola, &numero);
+
+        /*
+            estado == 1 -> numero valido
+            estado == 0 -> salir
+            estado == -1 -> invalido
+        */
+
+        if (estado == 1) {
+
+            c_encolar(C, te_crear(numero));
+        }
+    }
+
+    return C;
+}
 
 //Ejercicio 2
 bool c_ej2_existeclave(Cola c, int clave){
