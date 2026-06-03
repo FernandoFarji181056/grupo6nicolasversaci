@@ -355,11 +355,13 @@ bool c_ej3_iguales(Cola c1, Cola c2){
   }
   
   while (!c_es_vacia(auxiliar)) {
-    e1 = c_desencolar(auxiliar);
-    c_encolar(c1, e1);
-    
-    e2 = c_desencolar(auxiliar);
-    c_encolar(c2, e2);
+      e1 = c_desencolar(auxiliar);
+      c_encolar(c1, e1);
+      
+      if (!c_es_vacia(auxiliar)) {
+        e2 = c_desencolar(auxiliar);
+        c_encolar(c2, e2);
+    }
   }
 
   return iguales;
