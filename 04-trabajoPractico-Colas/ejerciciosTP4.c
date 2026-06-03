@@ -16,8 +16,8 @@ void ejecutar_TP4_EJ02() {
 
     clearScreen();
 
-    int min_cola=1
-    int max_cola=1000
+    int min_cola=1;
+    int max_cola=1000;
 
     printf("============================================\n");
     printf("           Elegiste el ejercicio 2\n");
@@ -314,8 +314,8 @@ void ejecutar_TP4_EJ05() {
 
 
 void ejecutar_TP4_EJ06() {
-    int min=1
-    int max=1000
+    int min=1;
+    int max=1000;
     
     printf("========================================================\n");
     printf("           Elegiste el ejercicio 6\n");
@@ -324,7 +324,6 @@ void ejecutar_TP4_EJ06() {
     printf("EJERCICIO 6 - VALORES COMUNES ENTRE PILA Y COLA\n\n");
 
     Pila p = p_crear();
-    Cola c = c_crear();
 
     TipoElemento X;
 
