@@ -131,8 +131,68 @@ bool c_ej3_iguales(Cola c1, Cola c2){
 
 
 //Ejercicio 4 
-
+/*  Esta funcion recibe una cola de numeros enteros
+    y retorna una nueva cola con los elementos
+    que NO se repiten en la cola original.
+    La cola original no debe destruirse y debe
+    quedar en su estado inicial.
+*/
 Cola  c_ej4_colanorepetidos(Cola c){
+
+    Cola resultado = c_crear();
+    Cola auxiliar = c_crear();
+
+    TipoElemento x;
+    TipoElemento y;
+
+    int contador;
+    int longitud = 0;
+
+    while (!c_es_vacia(c)) {
+
+        x = c_desencolar(c);
+
+        c_encolar(auxiliar, x);
+
+        longitud++;
+    }
+
+
+    while (!c_es_vacia(auxiliar)) {
+
+        x = c_desencolar(auxiliar);
+
+        c_encolar(c, x);
+    }
+
+    
+    for (int i = 0; i < longitud; i++) {
+
+        x = c_desencolar(c);
+
+        contador = 0;
+
+        for (int j = 0; j < longitud; j++) {
+
+            y = c_desencolar(c);
+
+            if (x->clave == y->clave) {
+
+                contador++;
+            }
+
+            c_encolar(c, y);
+        }
+
+        if (contador == 1) {
+
+            c_encolar(resultado, te_crear(x->clave));
+        }
+
+        c_encolar(c, x);
+    }
+
+    return resultado;
 }
 
 //Ejercicio 5 
