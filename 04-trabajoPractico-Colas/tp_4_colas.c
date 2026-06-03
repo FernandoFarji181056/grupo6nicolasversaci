@@ -58,31 +58,245 @@ Cola cargarColaManual(int min_cola, int max_cola) {
 }
 
 //Ejercicio 2
+
+// EJERCICIO 2.a
+/*  Esta funcion recibe una cola y una clave.
+    Retorna true si la clave existe en la cola,
+    caso contrario retorna false.
+    La cola original no debe destruirse.
+*/
 bool c_ej2_existeclave(Cola c, int clave){
 
+    Cola auxiliar = c_crear();
+
+    TipoElemento x;
+
+    bool existe = false;
+
+    while (!c_es_vacia(c)) {
+
+        x = c_desencolar(c);
+
+        if (x->clave == clave) {
+
+            existe = true;
+        }
+
+        c_encolar(auxiliar, x);
+    }
+
+    // restaurar cola original
+    while (!c_es_vacia(auxiliar)) {
+
+        x = c_desencolar(auxiliar);
+
+        c_encolar(c, x);
+    }
+
+    return existe;
+
 }
 
+// EJERCICIO 2.b
+/*  Esta funcion recibe una cola,
+    una posicion ordinal y un elemento.
+    Inserta el elemento en la posicion indicada.
+    Retorna la nueva cola.
+*/
 
 Cola c_ej2_colarelemento(Cola c, int posicionordinal, TipoElemento X){
+    
+    Cola auxiliar = c_crear();
 
+    TipoElemento actual;
+
+    int posicion = 1;
+
+    int longitud = c_ej2_contarelementos(c);
+
+    // validar posicion
+    if (posicionordinal < 1 || posicionordinal > longitud + 1) {
+
+        return c;
+    }
+
+    while (!c_es_vacia(c)) {
+
+        // insertar antes
+        if (posicion == posicionordinal) {
+
+            c_encolar(auxiliar, X);
+        }
+
+        actual = c_desencolar(c);
+
+        c_encolar(auxiliar, actual);
+
+        posicion++;
+    }
+
+    // insertar al final
+    if (posicionordinal == longitud + 1) {
+
+        c_encolar(auxiliar, X);
+    }
+
+    // restaurar
+    while (!c_es_vacia(auxiliar)) {
+
+        actual = c_desencolar(auxiliar);
+
+        c_encolar(c, actual);
+    }
+
+    return c;
 }
 
+// EJERCICIO 2.c
+/*  Esta funcion recibe una cola y una clave.
+    Elimina todas las apariciones de esa clave.
+    Retorna la cola sin esos elementos.
+*/
 
 Cola c_ej2_sacarelemento(Cola c, int clave){
 
+    Cola auxiliar = c_crear();
+
+    TipoElemento x;
+
+    while (!c_es_vacia(c)) {
+
+        x = c_desencolar(c);
+
+        // solo guardar distintos
+        if (x->clave != clave) {
+
+            c_encolar(auxiliar, x);
+        }
+    }
+
+    // restaurar
+    while (!c_es_vacia(auxiliar)) {
+
+        x = c_desencolar(auxiliar);
+
+        c_encolar(c, x);
+    }
+
+    return c;
 }
 
+// EJERCICIO 2.d
+/*  Esta funcion recibe una cola
+    y retorna la cantidad de elementos
+    que contiene.
+    La cola original no debe destruirse.
+*/
 
 int c_ej2_contarelementos(Cola c){
+    Cola auxiliar = c_crear();
 
+    TipoElemento x;
+
+    int contador = 0;
+
+    while (!c_es_vacia(c)) {
+
+        x = c_desencolar(c);
+
+        contador++;
+
+        c_encolar(auxiliar, x);
+    }
+
+    // restaurar cola original
+    while (!c_es_vacia(auxiliar)) {
+
+        x = c_desencolar(auxiliar);
+
+        c_encolar(c, x);
+    }
+
+    return contador;
 }
 
+// EJERCICIO 2.e
+/*  Esta funcion recibe una cola
+    y retorna una copia exacta de la misma.
+    La cola original no debe destruirse.
+*/
 
 Cola c_ej2_copiar(Cola c){
 
+    Cola copia = c_crear();
+    Cola auxiliar = c_crear();
+
+    TipoElemento x;
+
+    while (!c_es_vacia(c)) {
+
+        x = c_desencolar(c);
+
+        c_encolar(copia, te_crear(x->clave));
+
+        c_encolar(auxiliar, x);
+    }
+
+    // restaurar original
+    while (!c_es_vacia(auxiliar)) {
+
+        x = c_desencolar(auxiliar);
+
+        c_encolar(c, x);
+    }
+
+    return copia;
+
 }
 
+// EJERCICIO 2.f
+/*  Esta funcion recibe una cola
+    y retorna otra cola con los elementos
+    en orden invertido.
+    La cola original no debe destruirse.
+*/
+
 Cola c_ej2_invertir(Cola c){
+    
+    Cola auxiliar = c_crear();
+    Cola invertida = c_crear();
+
+    Pila p = p_crear();
+
+    TipoElemento x;
+
+    // pasar cola a pila
+    while (!c_es_vacia(c)) {
+
+        x = c_desencolar(c);
+
+        p_apilar(p, x);
+
+        c_encolar(auxiliar, x);
+    }
+
+    // restaurar cola original
+    while (!c_es_vacia(auxiliar)) {
+
+        x = c_desencolar(auxiliar);
+
+        c_encolar(c, x);
+    }
+
+    // pila -> cola invertida
+    while (!p_es_vacia(p)) {
+
+        x = p_desapilar(p);
+
+        c_encolar(invertida, te_crear(x->clave));
+    }
+
+    return invertida;    
 }
 
 //Ejercicio 3 
