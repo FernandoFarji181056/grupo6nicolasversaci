@@ -197,9 +197,84 @@ Cola  c_ej4_colanorepetidos(Cola c){
 
 //Ejercicio 5 
 
+/*  Esta funcion recibe una cola de numeros enteros
+    no repetidos y mayores o iguales a 2.
+    Retorna una nueva cola con los divisores
+    totales y parciales de la cola original.
+*/
 cola c_ej5_divisortotal(Cola c){
-}
+    
+    Cola resultado = c_crear();
+    Cola auxiliar = c_crear();
 
+    TipoElemento x;
+    TipoElemento y;
+
+    int longitud = 0;
+
+    //calcular longitud sin destruir cola
+    while (!c_es_vacia(c)) {
+
+        x = c_desencolar(c);
+
+        c_encolar(auxiliar, x);
+
+        longitud++;
+    }
+    //restaurar cola original
+
+    while (!c_es_vacia(auxiliar)) {
+
+        x = c_desencolar(auxiliar);
+
+        c_encolar(c, x);
+    }
+
+    for (int i = 0; i < longitud; i++) {
+
+        x = c_desencolar(c);
+
+        int divisibles = 0;
+
+        for (int j = 0; j < longitud; j++) {
+
+            y = c_desencolar(c);
+
+            if (y->clave % x->clave == 0) {
+
+                divisibles++;
+            }
+
+            c_encolar(c, y);
+        }
+
+        if (divisibles == longitud) {
+
+            bool* esTotal = malloc(sizeof(bool));
+
+            *esTotal = true;
+
+            c_encolar(resultado,
+                te_crear_con_valor(x->clave, esTotal));
+        }
+
+        else if (divisibles >= (longitud / 2.0)) {
+
+            bool* esTotal = malloc(sizeof(bool));
+
+            *esTotal = false;
+
+            c_encolar(resultado,
+                te_crear_con_valor(x->clave, esTotal));
+        }
+
+ 
+        c_encolar(c, x);
+    }
+
+    return resultado;
+}
+    
 //Ejercicio 6
 Lista c_ej6_comunesapilaycola(Pila p, Cola c){
 }
