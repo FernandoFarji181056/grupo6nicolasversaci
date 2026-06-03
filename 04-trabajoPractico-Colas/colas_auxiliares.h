@@ -5,5 +5,7 @@
 #include "../libs/colas/headers/colas.h"
 
 bool cargarColasManual(Cola C1, Cola C2);
+void restaurarcola (Cola destino, Cola auxiliar);
+int longitudcola (Cola c);
 
 #endif
