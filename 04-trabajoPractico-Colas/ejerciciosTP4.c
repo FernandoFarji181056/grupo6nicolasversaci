@@ -314,11 +314,91 @@ void ejecutar_TP4_EJ05() {
 
 
 void ejecutar_TP4_EJ06() {
+    int min=1
+    int max=1000
     
+    printf("========================================================\n");
+    printf("           Elegiste el ejercicio 6\n");
+    printf("======================================================\n");
 
-    printf("Ejercicio 6 \n");
+    printf("EJERCICIO 6 - VALORES COMUNES ENTRE PILA Y COLA\n\n");
 
-    
+    Pila p = p_crear();
+    Cola c = c_crear();
+
+    TipoElemento X;
+
+    char buffer[100];
+
+    int numero;
+
+    bool salir = false;
+
+    Cola c= cargarColaManual(min,max)
+    salir = false;
+
+    // CARGA COLA
+    printf("\nCARGA DE COLA\n");
+
+    while (!salir) {
+
+        printf("Ingrese numero para cola: ");
+
+        fgets(buffer, 100, stdin);
+
+        buffer[strcspn(buffer, "\n")] = '\0';
+
+        if ((buffer[0] == 'X' || buffer[0] == 'x')
+            && strlen(buffer) == 1) {
+
+            salir = true;
+
+        } else if (validarEntero(buffer)) {
+
+            numero = atoi(buffer);
+
+            X = te_crear(numero);
+
+            c_encolar(c, X);
+
+        } else {
+
+            printf("Entrada invalida.\n");
+        }
+    }
+
+    printf("\nPILA:\n");
+    p_mostrar(p);
+
+    printf("\nCOLA:\n");
+    c_mostrar(c);
+
+    Lista resultado = c_ej6_comunesapilaycola(p, c);
+
+    printf("\nRESULTADO:\n");
+
+    if (l_es_vacia(resultado)) {
+
+        printf("No existen valores comunes.\n");
+
+    } else {
+
+        Iterador it = iterador(resultado);
+
+        while (hay_siguiente(it)) {
+
+            TipoElemento x = siguiente(it);
+
+            printf("%d:%s\n",
+                   x->clave,
+                   (char*) x->valor);
+        }
+    }
+
+    printf("\nComplejidad algoritmica: O(n*m)\n");
+    printf("Se recorre la cola completa por cada elemento de la pila.\n");
+
+    system("pause");    
 
     printf("=====================================\n");
 
