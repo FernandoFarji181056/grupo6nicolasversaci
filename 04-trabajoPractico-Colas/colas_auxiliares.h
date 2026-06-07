@@ -3,9 +3,10 @@
 
 #include <stdbool.h>
 #include "../libs/colas/headers/colas.h"
+#include "../libs/pilas/headers/pilas.h"
 
-Colas cargarColasManual(Cola C1, Cola C2);
-void restaurarcola (Cola destino, Cola auxiliar);
-Pila cargarPilaManual (int min_pila, int max_pila);
+Cola cargarColaManual(int min_cola, int max_cola);
+Pila cargarPilaManual(int min_pila, int max_pila);
+void restaurarcola(Cola destino, Cola auxiliar);
 
 #endif
