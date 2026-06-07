@@ -7,6 +7,7 @@
 #include "../libs/colas/headers/colas.h"
 #include "tp_4_colas.h"
 #include "../libs/validaciones/headers/validaciones.h"
+#include "colas_auxiliares.h"
 
 /*  Esta función pertenece al ejercicio 2
     del TP de colas 
