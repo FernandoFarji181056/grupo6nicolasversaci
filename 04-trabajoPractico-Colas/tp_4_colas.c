@@ -572,8 +572,109 @@ Lista c_ej6_comunesapilaycola(Pila p, Cola c){
     return resultado;
 }
    
-//Ejercicio 7 
-Cola c_ej7_atenderclientes(Cola c1, Cola c2, Cola c3, int tiempoatencion){
+
+//Ejercicio 7
+
+/*  Esta funcion recibe tres colas con numeros enteros y un entero
+    cada cola representa una ventanilla con clientes
+    en la clave de cada cliente esta el tiempo que demora su atencion
+    el entero es la cantidad de minuntos que se atendera a cada cola
+    retorna una cola, que en el valor contiene una cadena con el orden de atencion de cada cliente
+*/
+Cola c_ej7_atenderclientes(Cola c1, Cola c2, Cola c3, int tiempoatencion) {
+
+    Cola resultado = c_crear();
+
+    // chequeo que las colas no esten vacias
+    if (c_es_vacia(c1) && c_es_vacia(c2) && c_es_vacia(c3)) {
+
+        return resultado;
+    }
+
+    //creo contadores auxiliares para el control de los clientes
+    int cliente1 = 1;
+    int cliente2 = 1;
+    int cliente3 = 1;
+
+
+    /* en este while voy recorriendo las distintas cajas
+    en cada una controlo si esta vacia
+    si no es asi resto el tiempo de atencion a cada cliente,
+    si es menor o igual a 0 lo atiendo y lo encolo a la cola resultado
+    */
+    while (!c_es_vacia(c1) || !c_es_vacia(c2) || !c_es_vacia(c3)) {
+
+        // Cola 1
+        if (!c_es_vacia(c1)) {
+
+            TipoElemento x = c_desencolar(c1);
+
+            int restante = x->clave - tiempoatencion;
+
+            if (restante <= 0) {
+
+                char* texto = malloc(50);
+
+                sprintf(texto, "Cliente %d Cola 1", cliente1);
+
+                c_encolar(resultado, te_crear_con_valor( 1, texto));
+
+                cliente1++;
+            }
+            else {
+
+                c_encolar(c1, te_crear(restante));
+            }
+        }
+
+        // Cola 2
+        if (!c_es_vacia(c2)) {
+
+            TipoElemento x = c_desencolar(c2);
+
+            int restante = x->clave - tiempoatencion;
+
+            if (restante <= 0) {
+
+                char* texto = malloc(50);
+
+                sprintf(texto, "Cliente %d Cola 2", cliente2);
+
+                c_encolar(resultado, te_crear_con_valor(2, texto));
+
+                cliente2++;
+            }
+            else {
+
+                c_encolar(c2, te_crear(restante));
+            }
+        }
+
+        // Cola 3
+        if (!c_es_vacia(c3)) {
+
+            TipoElemento x = c_desencolar(c3);
+
+            int restante = x->clave - tiempoatencion;
+
+            if (restante <= 0) {
+
+                char* texto = malloc(50);
+
+                sprintf(texto, "Cliente %d Cola 3", cliente3);
+
+                c_encolar(resultado, te_crear_con_valor(3, texto));
+
+                cliente3++;
+            }
+            else {
+
+                c_encolar(c3, te_crear(restante));
+            }
+        }
+    }
+
+    return resultado;
 }
 
 
