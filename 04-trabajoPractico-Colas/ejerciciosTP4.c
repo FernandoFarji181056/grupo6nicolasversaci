@@ -372,12 +372,51 @@ void ejecutar_TP4_EJ06() {
 
 
 void ejecutar_TP4_EJ07() {
+    clearScreen();
+
+    int min_cola = 1;
+    int max_cola = 50;
+
+    printf("========================================================\n");
+    printf("           Elegiste el ejercicio 7\n");
+    printf("En este ejercicio vas a armar 3 colas de clientes para\n");
+    printf("sus respectivas cajas, en cada cliente debes ingresar el\n");
+    printf("tiempo que demorara su atención.\n");
+    printf("Como hay un solo cajero para las 3 cajas tambien deberas\n");
+    printf("ingresar el tiempo que estará en cada caja\n");
+    printf("========================================================\n");
+
+
+    // -------------------------
+    // Crear colas
+    // -------------------------
+
+    Cola c1 = cargarColaManual(min_cola, max_cola);
+    Cola c2 = cargarColaManual(min_cola, max_cola);
+    Cola c3 = cargarColaManual(min_cola, max_cola);
+
     
+    int Q = solicitarEnteroEntre("Ingresa el tiempo que estara el cajero en cada caja, entre 5 y 15 minutos: ", 5, 15);
 
-    printf("Ejercicio 7 \n");
+    // -------------------------
+    // Ejecutar ejercicio
+    // -------------------------
 
+    Cola resultado = c_ej7_atenderclientes(c1, c2, c3, Q);
 
-    printf("=====================================\n");
+    // -------------------------
+    // Mostrar resultado
+    // -------------------------
+
+    printf("\nOrden de atencion:\n\n");
+
+    while (!c_es_vacia(resultado)) {
+
+        TipoElemento x = c_desencolar(resultado);
+
+        printf("%s\n", (char*) x->valor);
+    }
+
 
     printf("\n=====================================\n");
     printf("        FIN DEL EJERCICIO 7\n");
