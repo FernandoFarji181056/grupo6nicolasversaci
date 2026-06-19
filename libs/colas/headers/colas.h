@@ -2,7 +2,7 @@
 #define COLAS_H
 
 #include <stdbool.h>
-#include "../libs/tipoElemento/headers/tipo_elemento.h"
+#include "../../tipoElemento/headers/tipo_elemento.h"
 
 static const int TAMANIO_MAXIMO = 10;
 
