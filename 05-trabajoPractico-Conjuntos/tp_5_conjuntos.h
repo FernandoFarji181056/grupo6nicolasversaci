@@ -2,7 +2,7 @@
 #define TP_CONJUNTOS_H
 
 #include <stdbool.h>
-#include ".\conjuntos.h"
+#include "../libs/conjuntos/headers/conjuntos.h"
 
 
 /**
