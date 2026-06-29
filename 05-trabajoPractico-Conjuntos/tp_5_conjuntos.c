@@ -8,6 +8,7 @@
 #include "../libs/validaciones/headers/validaciones.h"
 #include "conjuntos_auxiliares.h"
 #include "../libs/listas/headers/listas.h"
+#include "conjuntos_auxiliares.h"
 
 //Funciones Auxiliares
 /*  Esta función permite cargar un conjunto en forma manual.
