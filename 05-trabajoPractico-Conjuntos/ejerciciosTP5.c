@@ -8,6 +8,7 @@
 #include "tp_5_conjuntos.h"
 #include "../libs/validaciones/headers/validaciones.h"
 #include "../libs/listas/headers/listas.h"
+#include "conjuntos_auxiliares.h"
 
 
 void ejecutar_TP5_EJ02() {
