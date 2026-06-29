@@ -6,5 +6,5 @@
 
 
 bool cargarConjuntos(Conjunto A, Conjunto B);
-
+void verificarSubconjunto(Conjunto A, Conjunto B, char nombreA, char nombreB);
 #endif
