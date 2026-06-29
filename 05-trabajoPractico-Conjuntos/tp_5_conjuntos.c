@@ -58,7 +58,7 @@ bool cargarConjunto(Conjunto A){
 
             X = te_crear(numero);
 
-            if(cto_agregar(C,X)){
+            if(cto_agregar(A,X)){
                 printf("Elemento agregado correctamente.\n");
             }
             else{
