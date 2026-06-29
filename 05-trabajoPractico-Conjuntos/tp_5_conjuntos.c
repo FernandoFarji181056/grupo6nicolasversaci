@@ -68,10 +68,6 @@ bool cargarConjunto(Conjunto A){
 
     }while(!salir);
 
-    if(cto_es_vacio(C)){
-        printf("\nEl conjunto no puede estar vacio.\n");
-        return false;
-    }
 
     return true;
 }
