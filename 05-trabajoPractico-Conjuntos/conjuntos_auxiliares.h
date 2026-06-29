@@ -5,6 +5,7 @@
 #include "../libs/conjuntos/headers/conjuntos.h"
 
 
-bool cargarConjuntos(Conjunto A, Conjunto B);
+bool cargarConjunto(Conjunto A);
 void verificarSubconjunto(Conjunto A, Conjunto B, char nombreA, char nombreB);
+
 #endif
