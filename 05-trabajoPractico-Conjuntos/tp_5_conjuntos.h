@@ -3,7 +3,7 @@
 
 #include <stdbool.h>
 #include "../libs/conjuntos/headers/conjuntos.h"
-
+#include "../libs/listas/headers/listas.h"
 
 /**
 2.	Desarrollar un algoritmo que dado dos conjuntos de elementos tipo numérico (clave) 
