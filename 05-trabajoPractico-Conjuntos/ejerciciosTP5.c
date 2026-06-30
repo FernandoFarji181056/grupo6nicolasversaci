@@ -29,7 +29,9 @@ void ejecutar_TP5_EJ02() {
         printf("1 - Union\n");
         printf("2 - Interseccion\n");
         printf("3 - Diferencia\n");
-        printf("4 - Pertenencia\n");
+        //printf("4 - Pertenencia\n");
+        printf("4 - Pertenencia entre dos conjuntos\n");
+        printf("5 - Pertenencia de numero a conjunto\n");
         printf("0 - Volver\n\n");
 
         opcion = solicitarEnteroEntre("Ingrese una opcion: ",0,4);
@@ -145,6 +147,23 @@ void ejecutar_TP5_EJ02() {
             clearScreen();
             break;
         }
+        case 5: {
+            Conjunto A = cto_crear();
+
+            printf("Carga del conjunto:\n\n");
+            cargarConjunto(A);
+
+            int clave = solicitarEntero("\n\nAhora ingrese el numero a buscar: ");
+
+            if (c_ej2_pertenece(A, clave)){
+                printf("\n\n La clave %d esta en el conjunto.\n", clave);
+            } else {
+                printf("\n\n La clave %d no esta en el conjunto.\n", clave);
+            }
+            system("pause");
+            clearScreen();
+            break;
+        }
 
         }
 
@@ -154,7 +173,9 @@ void ejecutar_TP5_EJ02() {
     printf("Union: O(n+m)\n");
     printf("Interseccion: O(n*m)\n");
     printf("Diferencia: O(n*m)\n");
-    printf("Pertenencia: O(n*m)\n");
+    //printf("Pertenencia: O(n*m)\n");
+    printf("Pertenencia entre conjuntos: O(n*m)\n");
+    printf("Pertenencia de numero a conjunto: O(1)\n");
 
     system("pause");
 }
