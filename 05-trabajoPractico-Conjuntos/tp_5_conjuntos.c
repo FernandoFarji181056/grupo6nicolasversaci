@@ -217,6 +217,17 @@ Conjunto c_ej2_pertenencia(Conjunto A, Conjunto B){
     return P;
 }
 
+//2.pertenece
+/*  Esta función verifica la pertenencia de una clave a un conjunto
+    Recibe un conjunto y un entero como parámetros.
+    Comprueba que el elemento este presente en el conjunto
+    Retorna true si está o false si no lo encuentra
+*/
+bool c_ej2_pertenece(Conjunto conjunto, int clave){
+    return cto_pertenece(conjunto, clave);
+
+}
+
 //Ejercicio 3 
 //Union
 /*  Esta función realiza la unión de una colección de conjuntos.
