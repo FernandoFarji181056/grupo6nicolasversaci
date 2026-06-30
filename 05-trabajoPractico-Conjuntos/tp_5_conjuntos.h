@@ -13,7 +13,7 @@ Conjunto c_ej2_union(Conjunto A, Conjunto B);
 Conjunto c_ej2_interseccion(Conjunto A, Conjunto B);
 Conjunto c_ej2_diferencia(Conjunto A, Conjunto B);
 Conjunto c_ej2_pertenencia(Conjunto A, Conjunto B);
-
+bool c_ej2_pertenece(Conjunto conjunto, int clave);
 
 /**
 3.	Desarrollar un algoritmo que dada una colección de conjuntos de elementos tipo numérico (clave) 
